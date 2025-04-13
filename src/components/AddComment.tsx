@@ -1,5 +1,5 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query';
-import axios, { AxiosResponse } from 'axios';
+import axios from 'axios';
 import React from 'react';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
@@ -37,8 +37,8 @@ const AddComment: React.FC = () => {
 
     const newComment: NewComment = {
       postId: 1,
-      name: 'Test User',
-      email: 'test@example.com',
+      name: 'user1',
+      email: 'hello@example.com',
       body: commentValue,
     };
 
