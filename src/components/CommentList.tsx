@@ -17,7 +17,7 @@ interface Comment {
 }
 
 const fetchComments = async (): Promise<Comment[]> => {
-  const res = await axios.get('https://jsonplaceholder.typicode.com/comments?postId=1');
+  const res = await axios.get('https://jsonplaceholder.typicode.com/comments?postId=2');
   return res.data;
 };
 
@@ -34,8 +34,8 @@ const CommentsList = () => {
   const { data, isLoading, isError } = useQuery<Comment[]>({
     queryKey: ['comments', 1],
     queryFn: fetchComments,
-  });
-
+  });   
+  console.log('data from comment list',data)
   const [editingComment, setEditingComment] = useState<Comment | null>(null);
   const [replyingToId, setReplyingToId] = useState<number | null>(null);
 
